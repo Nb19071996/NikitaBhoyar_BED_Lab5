@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Save Employee</title>
+</head>
+<style>
+.header {
+  padding: 10px;
+  text-align: center;
+  background: black;
+  color: white;
+  font-size: 20px;
+  text-align: left;
+}
+span { vertical-align: middle; }
+#first {
+    font-size: 20px;   
+}
+
+#second {
+	 padding-left: 20px;
+    font-size: 12px;
+}
+.center {
+  
+  border: 1px solid black;
+  width: 600px;
+  outline: solid 1px black;
+  margin: 80px;
+  padding:30px;
+  margin-left: 300px;
+  
+}
+</style>
+
+<body>
+<div id="parent" class="header">
+    <span id="first">Employee Management System</span>
+    <span id="second">Employee Management</span>
+</div>
+<!--<h4 class="header">Employee Management System</h2>-->
+	<div class="center" >
+	
+		<!--<h3>Employee</h3>-->
+		<h3 align="center" th:text="${heading}"></h3>
+		<!--<hr>-->
+	
+	
+		<form action="#" th:action="@{/emp/save}"
+						 th:object="${employee}" method="POST">
+		
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{id}" />
+			
+			<p>Employee First Name</p>
+			<input type="text" th:field="*{empFName}"
+					class="form-control mb-4 col-12" placeholder="Enter First Name">
+			<p>Employee Last Name</p>
+			<input type="text" th:field="*{empLName}"
+					class="form-control mb-4 col-12" placeholder="Enter Last Name">
+			<p>Employee Email</p>
+			<input type="text" th:field="*{empEmail}"
+					class="form-control mb-5 col-12" placeholder="Enter Email">
+				
+			<button style="background-color:blue;" type="submit" class="btn btn-info col-2">Submit</button>
+						
+		</form>
+	
+		<!--<hr>-->
+		<a th:href="@{/emp/empList}">Back to Employee List</a>
+		
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
