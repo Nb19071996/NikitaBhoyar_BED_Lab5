@@ -1,0 +1,18 @@
+
+Sql Query for create database and table creation file 
+
+DB Creation
+1. create database if not exists employee_management;
+
+2. use employee_management;
+
+Table Creation
+3. create table employee(id int primary key, employee_first_name varchar(50) NOT NULL, employee_last_name varchar(50)  NOT NULL, 
+	employee_email varchar(50) NOT NULL);
+
+4. ALTER TABLE employee CHANGE id id INT(10)AUTO_INCREMENT;
+
+5. describe employee;
+
+6. select * from employee;
+ 
